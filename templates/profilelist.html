@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h1 class="my-2">Profile List</h1>
+<table class="table m-3">
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    </tr>
+    </thead>
+{% for profile in proflies%}
+    <tr>
+        <td>{{profile}}</td>
+        <td>{{profile.age}}</td>
+        <td>{{profile.gender}}</td>
+        <td class="btn btn-dark btn-sm m-1"><a style="color:white;" href="/blog/profileDetail/{{profile.id}}">Read Post</a></td>
+        {% if profile.follow %}
+        <td class="btn btn-danger btn-sm m-1"><a style="color:white;" href="/blog/profileDetail/unfollow/{{profile.id}}">unFollow</a></td>
+        {% else %}
+        <td class="btn btn-primary btn-sm m-1"><a style="color:white;" href="/blog/profileDetail/follow/{{profile.id}}">Follow</a></td>
+        {% endif %}
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

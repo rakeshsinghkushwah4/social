@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load static %}
+<div class="row p-5">
+    <div class="col">
+        <h1>About us</h1>
+        <hr>
+    </div>
+    <div class="row text-justify">
+        <div class="col-sm-6">
+<p>	In contrast, unsupervised machine learning algorithms are used when the information used to train is neither classified nor labeled. Unsupervised learning studies how systems can infer a function to describe a hidden structure from unlabeled data. The system doesn’t figure out the right output, but it explores the data and can draw inferences from datasets to describe hidden structures from unlabeled data.
+	Semi-supervised machine learning algorithms fall somewhere in between supervised and unsupervised learning, since they use both labeled and unlabeled data for training – typically a small amount of labeled data and a large amount of unlabeled data. The systems that use this method are able to considerably improve learning accuracy. Usually, semi-supervised learning is chosen when the acquired labeled data requires skilled and relevant resources in order to train it / learn from it. Otherwise, acquiring unlabeled data generally doesn’t require additional resources.
+</p>
+        </div>
+        <div class="col-sm-6">
+            <!--<div class="embed-responsive embed-responsive-16by3">-->
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/omNgmJ6OpXM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>-->
+        <!--</div>-->
+
+<iframe src="https://www.w3schools.com">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+    </div>
+
+</div>
+{% endblock %}

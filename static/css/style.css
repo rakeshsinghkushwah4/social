@@ -1,0 +1,33 @@
+
+body{
+    font-size: 1.2em;
+}
+#heading{
+        height: 170px ;
+}
+#headfix{
+        position: absolute;
+        top : 92px;
+        width: 100%;
+        z-index: 10;
+
+
+}
+#headfix,h1{
+          font-size:40px;
+          color: #f2f40e;
+          text-shadow: 2px 2px 2px white;
+          font-family: cursive;
+          font-weight: bolder;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link
+{
+          color: #f2f40e;
+
+}
+
+@media(max-width:575px){
+.navbar-nav{
+        background-color:white;
+}
+}

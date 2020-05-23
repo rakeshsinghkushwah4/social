@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="m-3">Profile Detail</h2>
+<hr>
+<div class="m-2">
+<div class="row">
+<div class="col-sm-6">
+    <p>Name : {{p}}</p>
+    <p>Age  : {{p.age}}</p>
+    <p>Gender: {{p.gender}}</p>
+    <p>Address : {{p.address}}</p>
+    <p>Phone : {{p.phone_no}}</p>
+    <p>{{p.followed}}</p>
+    <p>{{p}}</p>
+    <a class="btn btn-dark" href="/blog/profilelist">Back</a>
+    {% if p.followed %}
+    <a class="btn btn-danger" href="/blog/profileDetail/unfollow/{{p.id}}">unFollow</a>
+    {% else %}
+    <a class="btn btn-primary" href="/blog/profileDetail/follow/{{p.id}}">Follow</a>
+    {% endif %}
+</div>
+<div class="col-sm-6">
+    <img src="{{p.dp.url}}" alt="listing-photo" class="img-fluid" style="width:300px; height:190px">
+</div>
+    </div>
+    </div>
+{% endblock%}

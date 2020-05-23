@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Social</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <script src="{%static 'js/jquery-2.2.0.min.js' %}"></script>
+    <script src="{%static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+  </head>
+<body>
+<header id="heading">
+
+<img class="w-100 h-100" src="{% static 'img/heading.jpg' %}">
+            <div id="headfix">
+<nav class="navbar navbar-expand-sm navbar-light bg-transparet">
+                 <a class="navbar-brand" href="/blog/home" style="font-size:40px;
+                                                                  color: #296fe7 ;
+                                                                  text-shadow: 2px 2px 2px white;
+                                                                  font-family: cursive;">e-Social</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/blog/home" style="font-size:20px;">Home<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/blog/contect" style="font-size:20px">Contect us <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/blog/about" style="font-size:20px">About us <span class="sr-only">(current)</span></a>
+      </li>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/accounts/profile">Profile</a>
+          <a class="dropdown-item" href="/blog/profilelist">Profiles List</a>
+          <a class="dropdown-item" href="/blog/postlist">MyPost List</a>
+          <a class="dropdown-item" href="/blog/createPost">Add Post</a>
+          <a class="dropdown-item" href="/accounts/logout">Log Out</a>
+        </div>
+      </li>
+        {% else %}
+        <li class="nav-item active">
+        <a class="nav-link" href="/accounts/login" style="font-size:20px">Login <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="/accounts/register" style="font-size:20px">Register <span class="sr-only">(current)</span></a>
+      </li>
+        {% endif %}
+     </ul>
+  </div>
+</nav>
+</div>
+
+<!---->
+</header>
+
+{% block content%}
+
+{% endblock %}
+
+<footer>
+<br>
+<br>
+    <h3 class="ml-3 text-center">This is footers</h3>
+    <br>
+    <br>
+</footer>
+
+
+</body>
+</html>

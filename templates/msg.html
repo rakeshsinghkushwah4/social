@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load static %}
+
+<h3>Comments</h3>
+<form method="POST" >
+    {% csrf_token %}
+<input type="text" name="msg" class="m-3">
+    <div class="form-group mb-0">
+            <button type="submit" class="btn-md button-theme btn-block">Comment </button>
+        </div>
+    </form>
+<div class="m-3">
+    {%for i in com%}
+    <h3>Post Name</h3>
+    <p>{{i.post}}</p>
+
+    <h3>Comment</h3>
+    <p>{{i.msg}}</p>
+
+    <h3>Comment By</h3>
+    <p>{{i.comment_by}}</p>
+
+</div>
+{% endfor%}
+
+{% endblock%}

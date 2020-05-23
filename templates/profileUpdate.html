@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+            <h3>Update Details</h3>
+        </div>
+    </div>
+        {% for i in profile %}
+        {{i.label_tag}}
+        <p>{{i}}</p>
+        {% endfor %}
+
+    <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+            <div class="form-group mb-0">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</form>
+{% endblock %}

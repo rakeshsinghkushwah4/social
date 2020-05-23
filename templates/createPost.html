@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+<div class="col-lg-12">
+     <div class="form-content-box">
+          <div class="details">
+               <h3 class="mt-3 ">Create Post</h3>
+    <form action="/blog/createPost/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    {%for i in form%}
+        {{i.label_tag}}
+         <div class="form-group">
+    {{i}}
+         </div>
+    {%endfor%}
+        <div class="form-group mb-0">
+                                <button type="submit" class="btn-md button-theme btn-block">Create Post</button>
+                            </div>
+    </form>
+          </div>
+     </div>
+</div>
+    </div>
+</div>
+{% endblock %}

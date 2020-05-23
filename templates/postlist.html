@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1 class="my-2">Post List</h1>
+<h2 class="ml-auto"><a href="/blog/createPost/">Add Post</a></h2>
+<table class="table m-3">
+    <thead>
+    <tr>
+        <th>Id</th>
+    <th>Subject</th>
+    <th>Date</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+{% for i in list %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.subject}}</td>
+        <td>{{i.cr_date | date:"d/m/y"}}</td>
+        <td class="btn btn-dark btn-sm m-1"><a style="color:white;" href="/blog/postDetail/{{i.id}}">Read Post</a>
+        <td class="btn btn-danger btn-sm m-1"><a style="color:white;" href="/blog/postDelete/{{i.id}}">Delete</a>
+        </td>
+
+    </tr>
+
+
+
+{% endfor %}
+    </table>
+{% endblock%}
